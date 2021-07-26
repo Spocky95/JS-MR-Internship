@@ -1,39 +1,41 @@
 body
 {
-    background-color: black;
-    color: lightgray;
+    background-color: rgb(1, 1, 1);
+    color: rgb(253, 253, 253);
     font-size: 28px;
 }
 
 
 #container
 {
-    width: 900px;
+    border-style: solid;
+    width: 1000px;
     margin-left: auto;
     margin-right: auto;
+    letter-spacing: 5px;
     
 }
 
 #plansza
 {
-    width: 900px;
+    width: 1000px;
     margin-top: 50px;
     margin-bottom: 50px;
     text-align: center;
-    font-size: 48px;
+    font-size: 50px;
 }
 
 #szubienica
 {
     float: left;
-    width: 450px;
+    width: 500px;
     text-align: center;
 }
 
 #alfabet
 {
     float: left;
-    width: 450px;
+    width: 500px;
     text-align: center;
 }
 
