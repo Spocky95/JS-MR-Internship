@@ -76,13 +76,14 @@ function start()
     var tresc_diva = ""; /* zmienna lokalna*/
 
     for(i=0;i<35;i++)
-    {
-        tresc_diva = tresc_diva + '<div class="litera">'+litery[i]+'</div>';
+    {   
+        var element = "lit" + i; /*tworzymy indeksy liter*/
+        tresc_diva = tresc_diva + '<div class="litera" id="'+element+'">'+litery[i]+'</div>';
+
         if((i+1) % 7 == 0)
         {
             tresc_diva = tresc_diva + '<div style="clear: both;"></div>';
         }
-        
 
     }
     
