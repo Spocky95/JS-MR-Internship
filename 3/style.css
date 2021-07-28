@@ -49,4 +49,14 @@ body
     padding: 5px;
     margin: 5px;
     float: left;/*┗|｀O′|┛ */
+    border-style: solid;
+    border-radius: 20px;
+    cursor: pointer;
+
+}
+.litera:hover
+{
+    background-color: rgb(119, 119, 119);
+    color: white;
+    border: 3px solid white;
 }
