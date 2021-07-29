@@ -3,7 +3,7 @@
 
 
 var haslo = "Bez pracy nie ma kołaczy";
-
+var haslo = haslo.toUpperCase();
 var dlugosc = haslo.length;
 var haslo1 = "";
 
@@ -78,7 +78,7 @@ function start()
     for(i=0;i<35;i++)
     {   
         var element = "lit" + i; /*tworzymy indeksy liter*/
-        tresc_diva = tresc_diva + '<div class="litera" id="'+element+'">'+litery[i]+'</div>';
+        tresc_diva = tresc_diva + '<div class="litera" onclick="sprawdz('+i+')" id="'+element+'">'+litery[i]+'</div>';
 
         if((i+1) % 7 == 0)
         {
@@ -96,5 +96,14 @@ window.onload = start;  /*wywolanie zdarzenia przez zaladowanie programu |onload
 
 /*alert("Witaj w grze wisielec, wygraj odgadujac haslo!")*/
 
-
+function sprawdz(nr)
+{
+    for(i=0;i<dlugosc;i++)
+    {
+        if(haslo.charAt(i) == litery[nr])
+        {
+            alert(i);
+        }
+    }
+}
 
