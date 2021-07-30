@@ -1,23 +1,22 @@
-
-
-
-
 var haslo = "Bez pracy nie ma kołaczy";
 var haslo = haslo.toUpperCase();
+
 var dlugosc = haslo.length;
 var haslo1 = "";
 
 
 
-    /*od i rownego zero; powtarzaj dopuki i jestmniejsze niz dlugosc; inkrementuj*/
-for(i=0;i<dlugosc;i++)
+/*zamiana hasla na ukryte znaki do zmiennej haslo1 */
+for(i=0;i<dlugosc;i++)/*od i rownego zero; powtarzaj dopuki i jestmniejsze niz dlugosc; inkrementuj*/
 {
     if(haslo.charAt(i)==" ")
     {
         haslo1 = haslo1 + " ";
     }
     else haslo1 = haslo1 + "_";
-}
+} 
+
+
 
 var topka = "Haslo: ";
 haslo1 = topka + haslo1;
@@ -26,9 +25,10 @@ haslo1 = haslo1.toUpperCase();/*zamiana na duze litery*/
 
 function wypisz_haslo()
 {
-    document.getElementById("plansza").innerHTML = haslo1;
-    
+    document.getElementById("plansza").innerHTML = haslo1;   
 }
+
+
 /*Utworzenie tablicy, recznie*/
 var litery = new Array(35);
 
@@ -67,7 +67,7 @@ litery[31] = "Y";
 litery[32] = "Z";
 litery[33] = "Ż";
 litery[34] = "Ź";
-/*Utworzenie tablicy, recznie*/
+/**/
 
 
 
@@ -96,14 +96,24 @@ window.onload = start;  /*wywolanie zdarzenia przez zaladowanie programu |onload
 
 /*alert("Witaj w grze wisielec, wygraj odgadujac haslo!")*/
 
+String.prototype.ustawZnak = function(miejsce,znak)/*ustawZnak(x,y) | ustawZnak() zmienia znak z pozycji x na znak y*/
+{
+    if(miejsce > this.length - 1){
+        return this.toString();
+    }/*jesli funkcja otrzyma x wieksze niz liczba znakow*/  /*zwroc stringa*/
+    else return this.substr(0, miejsce) + znak + this.substr(miejsce+1);
+}
+
+
 function sprawdz(nr)
 {
     for(i=0;i<dlugosc;i++)
     {
         if(haslo.charAt(i) == litery[nr])
         {
-            alert(i);
+            haslo1 = haslo1.ustawZnak(i,litery[nr])
         }
     }
+    wypisz_haslo();
 }
 
