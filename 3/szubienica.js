@@ -4,7 +4,7 @@ var haslo = haslo.toUpperCase();
 var dlugosc = haslo.length;
 var haslo1 = "";
 
-
+var topka = "Haslo: "
 
 /*zamiana hasla na ukryte znaki do zmiennej haslo1 */
 for(i=0;i<dlugosc;i++)/*od i rownego zero; powtarzaj dopuki i jestmniejsze niz dlugosc; inkrementuj*/
@@ -18,14 +18,13 @@ for(i=0;i<dlugosc;i++)/*od i rownego zero; powtarzaj dopuki i jestmniejsze niz d
 
 
 
-var topka = "Haslo: ";
-haslo1 = topka + haslo1;
+
 haslo1 = haslo1.toUpperCase();/*zamiana na duze litery*/
 
 
 function wypisz_haslo()
 {
-    document.getElementById("plansza").innerHTML = haslo1;   
+    document.getElementById("plansza").innerHTML = topka + haslo1;
 }
 
 
