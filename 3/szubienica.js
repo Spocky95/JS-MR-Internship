@@ -4,7 +4,7 @@ var haslo = haslo.toUpperCase();
 var dlugosc = haslo.length;
 var haslo1 = "";
 
-var topka = "Haslo: "
+var topka = "Hasło: "
 
 /*zamiana hasla na ukryte znaki do zmiennej haslo1 */
 for(i=0;i<dlugosc;i++)/*od i rownego zero; powtarzaj dopuki i jestmniejsze niz dlugosc; inkrementuj*/
@@ -106,13 +106,29 @@ String.prototype.ustawZnak = function(miejsce,znak)/*ustawZnak(x,y) | ustawZnak(
 
 function sprawdz(nr)
 {
+
+    var trafiona = false; /*flaga true of false dla litery*/
+
     for(i=0;i<dlugosc;i++)
     {
         if(haslo.charAt(i) == litery[nr])
         {
             haslo1 = haslo1.ustawZnak(i,litery[nr])
+            trafiona = true;
         }
     }
-    wypisz_haslo();
+    if(trafiona == true)
+    {
+        var element = "lit" + nr;
+        document.getElementById(element).style.background = "#005500";
+        
+        wypisz_haslo();
+    }
+    else
+    {   
+        var element = "lit" + nr;
+        document.getElementById(element).style.background = "#550000";
+    }
+    
 }
 
