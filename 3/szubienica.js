@@ -6,6 +6,7 @@ var haslo1 = "";
 
 var topka = "Hasło: "
 
+var fail = 0;
 /*zamiana hasla na ukryte znaki do zmiennej haslo1 */
 for(i=0;i<dlugosc;i++)/*od i rownego zero; powtarzaj dopuki i jestmniejsze niz dlugosc; inkrementuj*/
 {
@@ -128,6 +129,9 @@ function sprawdz(nr)
     {   
         var element = "lit" + nr;
         document.getElementById(element).style.background = "#550000";
+        fail++;
+        alert(fail);
+
     }
     
 }
