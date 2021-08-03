@@ -141,6 +141,9 @@ function sprawdz(nr)
         document.getElementById("alfabet").innerHTML = "You Win! " + haslo + " to prawidlowe haslo!"+'<br/><br/><span class="reset" onclick="location.reload()">Jeszcze Raz!</span>';
 
     }
-    
+    else if (fails == 9)
+    {
+        document.getElementById("alfabet").innerHTML = "Game Over! " + haslo + " to prawidlowe haslo!"+'<br/><br/><span class="reset" onclick="location.reload()">Jeszcze Raz!</span>';
+    }
 }
 
