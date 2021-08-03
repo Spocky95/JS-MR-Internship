@@ -1,4 +1,4 @@
-var haslo = "Bez pracy nie ma kołaczy";
+var haslo = "abc";
 var haslo = haslo.toUpperCase();
 
 var dlugosc = haslo.length;
@@ -6,7 +6,7 @@ var haslo1 = "";
 
 var topka = "Hasło: "
 
-var fail = 0;
+var fails = 0;
 /*zamiana hasla na ukryte znaki do zmiennej haslo1 */
 for(i=0;i<dlugosc;i++)/*od i rownego zero; powtarzaj dopuki i jestmniejsze niz dlugosc; inkrementuj*/
 {
@@ -129,8 +129,16 @@ function sprawdz(nr)
     {   
         var element = "lit" + nr;
         document.getElementById(element).style.background = "#550000";
-        fail++;
-        alert(fail);
+        document.getElementById(element).setAttribute("onclick",";");
+        fails++;
+        alert(fails);
+        var obraz = "img/s"+ fails +".jpg";
+        document.getElementById("szubienica").innerHTML = '<img src="'+obraz+'"/>';
+    }
+
+    if (haslo == haslo1)
+    {
+        document.getElementById("alfabet").innerHTML = "You Win! " + haslo + " to prawidlowe haslo!"+'<br/><br/><span class="reset" onclick="location.reload()">Jeszcze Raz!</span>';
 
     }
     
