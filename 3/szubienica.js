@@ -1,14 +1,22 @@
-var haslo = "abc";
-var haslo = haslo.toUpperCase();
+var things = ['Bez pracy nie ma kołaczy',
+ 'Fortuna kołem się toczy',
+  'Apetyt rośnie w miarę jedzenia',
+  'Co ma wisieć nie utonie',
+  'Dzieci i ryby głosu nie mają',
+  'Lepszy wróbel w garści niż gołąb na dachu'];/*lista mozliwych haseł*/
+var random = things[Math.floor(Math.random()*things.length)];/*wylosowanie przysłowia*/
+alert('wylosowano:' + random); /*wyswietla wylosowane przyslowie dla testu*/
+var haslo = random; /*nadpisuje haslo wylosowanym przysłowiem*/
+var haslo = haslo.toUpperCase();/*przekształca hasło na duze litery*/
 
-var dlugosc = haslo.length;
-var haslo1 = "";
+var dlugosc = haslo.length;/*pobiera dlugosc hasła*/
 
-var topka = "Hasło: "
+var haslo1 = "";/*zmienna/pole dla hasła wyswietlanego*/
+var topka = "Hasło: "/*przedrostek dla hasła*/
+var fails = 0;/*counter dla błędów*/
 
-var fails = 0;
 /*zamiana hasla na ukryte znaki do zmiennej haslo1 */
-for(i=0;i<dlugosc;i++)/*od i rownego zero; powtarzaj dopuki i jestmniejsze niz dlugosc; inkrementuj*/
+for(i=0;i<dlugosc;i++)/*od i rownego zero; powtarzaj dopóki i jest mniejsze niz dlugosc; inkrementuj*/
 {
     if(haslo.charAt(i)==" ")
     {
@@ -16,22 +24,14 @@ for(i=0;i<dlugosc;i++)/*od i rownego zero; powtarzaj dopuki i jestmniejsze niz d
     }
     else haslo1 = haslo1 + "_";
 } 
-
-
-
-
 haslo1 = haslo1.toUpperCase();/*zamiana na duze litery*/
-
-
-function wypisz_haslo()
+function wypisz_haslo()/*funkcja wyswietla hasło*/
 {
     document.getElementById("plansza").innerHTML = topka + haslo1;
 }
 
-
 /*Utworzenie tablicy, recznie*/
 var litery = new Array(35);
-
 litery[0] = "A";
 litery[1] = "Ą";
 litery[2] = "B";
