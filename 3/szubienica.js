@@ -25,7 +25,7 @@ for(i=0;i<dlugosc;i++)/*od i rownego zero; powtarzaj dopóki i jest mniejsze niz
     else haslo1 = haslo1 + "_";
 } 
 haslo1 = haslo1.toUpperCase();/*zamiana na duze litery*/
-function wypisz_haslo()/*funkcja wyswietla hasło*/
+function wypisz_haslo()/*funkcja wyswietla hasło1*/
 {
     document.getElementById("plansza").innerHTML = topka + haslo1;
 }
